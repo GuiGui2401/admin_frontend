@@ -1,6 +1,6 @@
 export const PROJECT_NAME = 'Estuaire_Achats';
-export const BASE_URL = 'http://api.estuiaireachat.fiacredev.com/';
-export const WEBSITE_URL = 'http://estuaireachat.fiacredev.com/';
+export const BASE_URL = 'http://api.estuiaireachat.fiacredev.com';
+export const WEBSITE_URL = 'http://estuaireachat.fiacredev.com';
 export const api_url = BASE_URL + '/api/v1/';
 export const api_url_admin = BASE_URL + '/api/v1/dashboard/admin/';
 export const export_url = BASE_URL + '/storage/';
