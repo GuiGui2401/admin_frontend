@@ -23,6 +23,10 @@ export default function Providers({ children }) {
       <ConfigProvider
         locale={AppLocale[i18n.language]}
         direction={theme.direction}
+        // Options d'accessibilité supplémentaires
+        getPopupContainer={(triggerNode) => {
+          return triggerNode.parentNode;
+        }}
       >
         {children}
       </ConfigProvider>

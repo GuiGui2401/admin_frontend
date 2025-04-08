@@ -9,6 +9,7 @@ import Providers from 'providers';
 import { Suspense, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import {
   Route,
   BrowserRouter as Router,

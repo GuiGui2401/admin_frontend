@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
+    "@ant-design/icons": "4.8.0",
     "@babel/runtime": "^7.18.0",
     "@chatscope/chat-ui-kit-react": "^1.9.3",
     "@ckeditor/ckeditor5-build-classic": "^34.2.0",
@@ -13,7 +13,8 @@
     "@reduxjs/toolkit": "^1.8.3",
     "@stripe/react-stripe-js": "^1.10.0",
     "@stripe/stripe-js": "^1.35.0",
-    "antd": "^4.20.6",
+    "@vercel/speed-insights": "^1.2.0",
+    "antd": "4.24.14",
     "apexcharts": "^3.35.5",
     "axios": "^0.27.2",
     "downloadjs": "^1.4.7",
