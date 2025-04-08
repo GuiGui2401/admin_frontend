@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react'; // Ajout de useMemo
 import { ConfigProvider } from 'antd';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
 import useBodyClass from './helpers/useBodyClass';
 import AppLocale from './configs/app-locale';
@@ -13,7 +13,15 @@ const themes = {
 
 export default function Providers({ children }) {
   const { theme } = useSelector((state) => state.theme, shallowEqual);
+  
+  // Utilisation de useBodyClass comme un hook
   useBodyClass(`dir-${theme.direction}`);
+
+  // Utilisation de useMemo pour optimiser la locale et la direction
+  const localeConfig = useMemo(() => ({
+    locale: AppLocale[i18n.language],
+    direction: theme.direction
+  }), [theme.direction, i18n.language]);
 
   return (
     <ThemeSwitcherProvider
@@ -21,11 +29,10 @@ export default function Providers({ children }) {
       defaultTheme={theme.currentTheme}
     >
       <ConfigProvider
-        locale={AppLocale[i18n.language]}
-        direction={theme.direction}
-        // Options d'accessibilité supplémentaires
+        {...localeConfig}
         getPopupContainer={(triggerNode) => {
-          return triggerNode.parentNode;
+          // Ajout d'une vérification de sécurité
+          return triggerNode?.parentNode || document.body;
         }}
       >
         {children}
