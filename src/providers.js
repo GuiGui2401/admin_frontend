@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'; // Ajout de useMemo
+import React, { useMemo } from 'react';
 import { ConfigProvider } from 'antd';
 import { useSelector, shallowEqual } from 'react-redux';
 import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
@@ -34,6 +34,19 @@ export default function Providers({ children }) {
           // Ajout d'une vérification de sécurité
           return triggerNode?.parentNode || document.body;
         }}
+        // Nouvelles options pour améliorer l'accessibilité
+        renderEmpty={() => (
+          <div 
+            role="alert" 
+            aria-live="assertive"
+          >
+            Aucun contenu
+          </div>
+        )}
+        // Options supplémentaires pour gérer les problèmes d'accessibilité
+        componentSize="middle"
+        // Désactiver certains comportements problématiques
+        autoInsertSpaceInButton={false}
       >
         {children}
       </ConfigProvider>
