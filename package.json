@@ -64,6 +64,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "engines": {
+    "node": ">=16.0.0 <21.0.0",
+    "npm": ">=8.0.0",
+    "yarn": ">=1.22.0"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
